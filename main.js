@@ -1,3 +1,3 @@
 function back(){
-    window.location = "main.html"
+    window.location = "main.html";
 }

@@ -2,7 +2,7 @@ status = "";
 objects = [];
 
 function preload(){
-    img = loadImage('mona.jpg');
+    img = loadImage('car.jpg');
     console.log("loaded image");
 }
 
@@ -20,7 +20,7 @@ function draw(){
         for ( i = 0; i < objects.length; i++) {
             w = objects[i].width;
             h = objects[i].height;
-            x = objects[i].x - 150;
+            x = objects[i].x;
             y = objects[i].y;
             l = objects[i].label;
 
@@ -28,10 +28,10 @@ function draw(){
             
             fill('#FF0000');          
             percent = Math.floor(objects[i].confidence * 100);
-            text(l + " " + percent + "%", x , y + 300);
+            text(l + " " + percent + "%", x, y);
             noFill();
             stroke('#FF0000');
-            rect(x, y, w , h);
+            rect(x, y, w + 300, h + 200);
             console.log("object drawn");
             document.getElementById("status").innerHTML = "Object Detected";
             document.getElementById("number_of_objects").innerHTML = "Number of Objects = " + objects[i].length;
